@@ -1,0 +1,54 @@
+@model LoginApp.Models.RegisterViewModel
+@{
+    ViewData["Title"] = "Registro";
+}
+
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            <h2>@ViewData["Title"]</h2>
+        </div>
+        <div class="auth-body">
+            <form asp-action="Register" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                
+                <div class="form-group">
+                    <label asp-for="FirstName">Nombre</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="LastName">Apellido</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Email">Email</label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="Password">Contraseña</label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword">Confirmar contraseña</label>
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                </div>
+            </form>
+        </div>
+        <div class="auth-footer">
+            <p>¿Ya tienes una cuenta? <a asp-action="Login">Inicia sesión</a></p>
+        </div>
+    </div>
+</div>
